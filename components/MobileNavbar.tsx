@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Sheet, SheetContent, SheetTrigger  } from '@/components/ui/sheet';
-import {CiMenuFries } from 'react-icons/ci';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import { CiMenuFries } from 'react-icons/ci';
 
-const Nav =() => {
+const Nav = () => {
     const links = [
         { href: '/', label: 'Home' },
         { href: '/services', label: 'Services' },
@@ -13,13 +13,14 @@ const Nav =() => {
         { href: '/work', label: 'Work' },
         { href: '/contact', label: 'Contact' },
     ];
- const pathname = usePathname();
+    const pathname = usePathname();
     return (
         <Sheet>
             <SheetTrigger className='flex justify-centre items-centre '>
                 <CiMenuFries className='text-[32px] text-accent'/>
             </SheetTrigger>
-            <SheetContent className='flex flex-col'>
+            <SheetContent className='flex flex-col gap-3'>
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className='mt-32 mb-40  text-center text-2xl'>
                     <Link href="/">
                     <h1 className='text-4xl font-semibold'>logo <span className='text-accent'>.</span></h1></Link>
