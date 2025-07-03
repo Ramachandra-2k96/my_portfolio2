@@ -3,10 +3,10 @@
 import { Divide } from "lucide-react";
 import CountUp from "react-countup";
 const stats = [
-    { value: 2, label: "Years of Experience" },       
-    { value: 40, label: "Projects Completed" },
-    { value: 13, label: "Technologies Mastered" },
-    { value: 700, label: "Code commits" },
+    { value: 3, label: "Years of Experience" },       
+    { value: 60, label: "Projects Completed" },
+    { value: 17, label: "Technologies Mastered" },
+    { value: 900, label: "Code commits" },
 ];
 const Stats = () => {
     return (
