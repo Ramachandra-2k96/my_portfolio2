@@ -8,9 +8,9 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt }  from "react-icons/fa";
 import { use } from "react";
 
 const info = [
-    { icon: <FaPhoneAlt />, label: "Phone", value: "+1234567890" },
-    { icon: <FaEnvelope />, label: "Email", value: "example@example.com" },
-    { icon: <FaMapMarkerAlt />, label: "Location", value: "City, Country" }
+    { icon: <FaPhoneAlt />, label: "Phone", value: "+919483924280" },
+    { icon: <FaEnvelope />, label: "Email", value: "ramachandraudupa2004@gmail.com" },
+    { icon: <FaMapMarkerAlt />, label: "Location", value: "Udupi, India" }
 ];
 const Contact = () => {
     return (
@@ -23,7 +23,7 @@ const Contact = () => {
                 <div className="xl:h-[54%] order-2 xl:order-none">
                     <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" action="">
                         <h3 className="text-4xl text-accent">Let's work together</h3>
-                        <p className="text-white/60-foreground">Contact us for collaborations or inquiries.</p>
+                        <p className="text-white/60-foreground">Contact me for collaborations or inquiries.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <Input type="firstname" placeholder="First Name"></Input>
                             <Input type="lastname" placeholder="Last Name"></Input>
@@ -45,7 +45,9 @@ const Contact = () => {
                             </SelectContent>
                         </Select>
                         <Textarea className="h-[200px] mt-4" placeholder="Your message here..."/>
-                        <Button size={"md"} className="max-w-40">Send Message</Button>
+                        <div className="flex justify-center items-center">
+                            <Button size={"md"} className="max-w-40">Send Message</Button>
+                        </div>
                     </form>
                 </div>
                 <div className="flex-1 flex items-center xl:justify-center order-1 xl:order-none mb-8 xl:mb-0">

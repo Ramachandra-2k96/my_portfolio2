@@ -17,7 +17,6 @@ const about = {
         { fieldName : "Name", fieldValue : "Ramachandra Udupa" },
         { fieldName : "Email", fieldValue : "ramachandraudupa2004@gmail.com" },
         { fieldName : "Phone", fieldValue : "(+91) 9353867435" },
-        { fieldName : "Nationality", fieldValue : "Indian" },
         { fieldName : "Experience", fieldValue : "2+ Years" },
         { fieldName : "Location", fieldValue : "Udupi, India" },
         { fieldName : "Freelance", fieldValue : "Available" },
@@ -177,8 +176,7 @@ const Resume = () => {
                                 </ul>
                             </div>
                         </TabsContent>
-
-                        <TabsContent value="about" className="w-full">
+                        <TabsContent value="about" className="w-full h-full text-center xl:text-left">
                             <div className="flex flex-col gap-[30px]">
                                 <h3 className="text-4xl font-bold">{about.title}</h3>
                                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
@@ -186,7 +184,7 @@ const Resume = () => {
                                     {about.info.map((info, index) => (
                                         <li key={index} className="flex justify-center items-center xl:justify-start gap-4">
                                             <span className="text-white/60">{info.fieldName}</span>
-                                            <span className="text-xl">{info.fieldValue}</span>
+                                            <span className="text-sm xl:text-xl">{info.fieldValue}</span>
                                         </li>
                                     ))}
                                 </ul>
