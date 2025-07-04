@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Glitch Transition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #00ffff;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        #content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        #content.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 6rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+            letter-spacing: 0.1em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #ff006e, #00ffff);
+            border: none;
+            padding: 1rem 2rem;
+            margin: 1rem;
+            font-size: 1.2rem;
+            font-family: 'Courier New', monospace;
+            color: #000;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.3);
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        .nav-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-button:hover::before {
+            left: 100%;
+        }
+
+        .info {
+            margin-top: 2rem;
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        #canvas-container.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scene {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .scene.active {
+            display: flex;
+        }
+
+        .scene h2 {
+            font-size: clamp(1.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            color: #ff006e;
+            text-shadow: 0 0 20px #ff006e;
+        }
+
+        .scene p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .back-button {
+            background: linear-gradient(45deg, #00ffff, #ff006e);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            color: #000;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                min-width: 150px;
+            }
+
+            .info {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            .scene p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="main-scene" class="scene active">
+            <h1>CYBER NEXUS</h1>
+            <div class="nav-buttons">
+                <button class="nav-button" onclick="initiateGlitch('neural-matrix')">NEURAL MATRIX</button>
+                <button class="nav-button" onclick="initiateGlitch('quantum-realm')">QUANTUM REALM</button>
+                <button class="nav-button" onclick="initiateGlitch('data-stream')">DATA STREAM</button>
+            </div>
+            <div class="info">
+                Experience the future of digital transitions. Click any button to witness the cyberpunk glitch effect that tears through reality itself.
+            </div>
+        </div>
+
+        <div id="neural-matrix" class="scene">
+            <h2>NEURAL MATRIX</h2>
+            <p>You've entered the neural matrix where thoughts become reality and reality becomes code. The boundaries between human consciousness and artificial intelligence blur into a singular digital existence.</p>
+            <button class="back-button" onclick="initiateGlitch('main-scene')">RETURN TO NEXUS</button>
+        </div>
+
+        <div id="quantum-realm" class="scene">
+            <h2>QUANTUM REALM</h2>
+            <p>Welcome to the quantum realm where particles exist in superposition and information travels faster than light. Here, the laws of physics bend to the will of pure data.</p>
+            <button class="back-button" onclick="initiateGlitch('main-scene')">RETURN TO NEXUS</button>
+        </div>
+
+        <div id="data-stream" class="scene">
+            <h2>RamaRa,jvh</h2>
+            <p>hihi</p>
+            <button class="back-button" onclick="initiateGlitch('main-scene')">RETURN TO NEXUS</button>
+        </div>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="glitch-canvas"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        class GlitchTransition {
+            constructor() {
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.material = null;
+                this.mesh = null;
+                this.isAnimating = false;
+                this.startTime = 0;
+                this.duration = 1500; // 1.5 seconds
+                this.targetScene = null;
+                
+                this.initThree();
+                this.createGlitchMaterial();
+                this.setupGeometry();
+                this.setupAudio();
+            }
+
+            initThree() {
+                this.scene = new THREE.Scene();
+                this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+                
+                this.renderer = new THREE.WebGLRenderer({ 
+                    canvas: document.getElementById('glitch-canvas'),
+                    antialias: false 
+                });
+                this.renderer.setSize(window.innerWidth, window.innerHeight);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+            }
+
+            createGlitchMaterial() {
+                const vertexShader = `
+                    varying vec2 vUv;
+                    void main() {
+                        vUv = uv;
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `;
+
+                const fragmentShader = `
+                    uniform sampler2D tDiffuse;
+                    uniform float time;
+                    uniform float intensity;
+                    uniform vec2 resolution;
+                    varying vec2 vUv;
+
+                    // Noise functions
+                    float random(vec2 st) {
+                        return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+                    }
+
+                    float noise(vec2 st) {
+                        vec2 i = floor(st);
+                        vec2 f = fract(st);
+                        float a = random(i);
+                        float b = random(i + vec2(1.0, 0.0));
+                        float c = random(i + vec2(0.0, 1.0));
+                        float d = random(i + vec2(1.0, 1.0));
+                        vec2 u = f * f * (3.0 - 2.0 * f);
+                        return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+                    }
+
+                    void main() {
+                        vec2 uv = vUv;
+                        vec2 pixel = 1.0 / resolution;
+                        
+                        // Time-based animation
+                        float t = time * 0.001;
+                        float glitchIntensity = intensity;
+                        
+                        // BIG CHUNK GLITCH BLOCKS - Create large horizontal segments
+                        float blockSize = 0.03; // Bigger blocks
+                        float blockY = floor(uv.y / blockSize) * blockSize;
+                        float blockRandom = random(vec2(blockY, floor(t * 8.0)));
+                        
+                        // Large horizontal displacement for big chunks
+                        float blockDisplacement = 0.0;
+                        if (blockRandom > 0.7) {
+                            blockDisplacement = (blockRandom - 0.7) * 0.4 * glitchIntensity;
+                        }
+                        
+                        // Apply block displacement
+                        vec2 blockUv = uv;
+                        blockUv.x += blockDisplacement;
+                        
+                        // Vertical chunk glitches
+                        float vBlockSize = 0.08; // Even bigger vertical blocks
+                        float blockX = floor(uv.x / vBlockSize) * vBlockSize;
+                        float vBlockRandom = random(vec2(blockX, floor(t * 6.0)));
+                        
+                        if (vBlockRandom > 0.8) {
+                            blockUv.y += (vBlockRandom - 0.8) * 0.3 * glitchIntensity;
+                        }
+                        
+                        // STRONG RGB CHANNEL SEPARATION - Much more dramatic
+                        float splitAmount = 0.03 * glitchIntensity; // Increased from 0.008
+                        vec2 redOffset = vec2(splitAmount, splitAmount * 0.5);
+                        vec2 greenOffset = vec2(0.0, 0.0);
+                        vec2 blueOffset = vec2(-splitAmount, -splitAmount * 0.5);
+                        
+                        // Add extra displacement for stronger effect
+                        if (blockRandom > 0.8) {
+                            redOffset.x += splitAmount * 2.0;
+                            blueOffset.x -= splitAmount * 2.0;
+                        }
+                        
+                        float r = texture2D(tDiffuse, blockUv + redOffset).r;
+                        float g = texture2D(tDiffuse, blockUv + greenOffset).g;
+                        float b = texture2D(tDiffuse, blockUv + blueOffset).b;
+                        
+                        // Random big chunk tearing - less frequent but bigger
+                        float tearSize = 0.05; // Bigger tear blocks
+                        float tearY = floor(uv.y / tearSize) * tearSize;
+                        float tear = step(0.85, random(vec2(tearY, floor(t * 4.0))));
+                        
+                        if (tear > 0.5) {
+                            float tearDisp = random(vec2(tearY, floor(t * 4.0) + 1.0)) * 0.3 * glitchIntensity;
+                            vec2 tearUv = blockUv + vec2(tearDisp, 0.0);
+                            r = texture2D(tDiffuse, tearUv + redOffset).r;
+                            g = texture2D(tDiffuse, tearUv + greenOffset).g;
+                            b = texture2D(tDiffuse, tearUv + blueOffset).b;
+                        }
+                        
+                        vec3 color = vec3(r, g, b);
+                        
+                        // Scanlines
+                        float scanline = sin(uv.y * resolution.y * 2.0) * 0.1 * glitchIntensity;
+                        color -= scanline;
+                        
+                        // Digital noise overlay
+                        float digitalNoise = random(uv + t) * 0.1 * glitchIntensity;
+                        color += digitalNoise;
+                        
+                        // Enhanced cyberpunk colors with stronger channel separation
+                        color.r *= 1.0 + 0.8 * glitchIntensity; // Increased red boost
+                        color.g *= 1.0 + 0.2 * glitchIntensity; // Slight green boost
+                        color.b *= 1.0 + 1.2 * glitchIntensity; // Strong blue boost
+                        
+                        // Brightness flicker
+                        float flicker = 1.0 + sin(t * 30.0) * 0.1 * glitchIntensity;
+                        color *= flicker;
+                        
+                        // Vignette effect
+                        float vignette = 1.0 - length(uv - 0.5) * 0.5;
+                        color *= vignette;
+                        
+                        gl_FragColor = vec4(color, 1.0);
+                    }
+                `;
+
+                this.material = new THREE.ShaderMaterial({
+                    uniforms: {
+                        tDiffuse: { value: null },
+                        time: { value: 0 },
+                        intensity: { value: 0 },
+                        resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+                    },
+                    vertexShader: vertexShader,
+                    fragmentShader: fragmentShader
+                });
+            }
+
+            setupGeometry() {
+                const geometry = new THREE.PlaneGeometry(2, 2);
+                this.mesh = new THREE.Mesh(geometry, this.material);
+                this.scene.add(this.mesh);
+            }
+
+            setupAudio() {
+                // Create glitch sound effect
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                this.createGlitchSound();
+            }
+
+            createGlitchSound() {
+                const duration = this.duration / 1000;
+                const sampleRate = this.audioContext.sampleRate;
+                const frameCount = sampleRate * duration;
+                const buffer = this.audioContext.createBuffer(1, frameCount, sampleRate);
+                const data = buffer.getChannelData(0);
+
+                // Generate glitch sound
+                for (let i = 0; i < frameCount; i++) {
+                    const t = i / sampleRate;
+                    let sample = 0;
+                    
+                    // Multiple frequency components for glitch effect
+                    sample += Math.sin(2 * Math.PI * 60 * t) * 0.3;
+                    sample += Math.sin(2 * Math.PI * 120 * t) * 0.2;
+                    sample += Math.sin(2 * Math.PI * 240 * t) * 0.1;
+                    
+                    // Add noise bursts
+                    if (Math.random() < 0.1) {
+                        sample += (Math.random() - 0.5) * 0.5;
+                    }
+                    
+                    // Envelope
+                    const envelope = Math.exp(-t * 2);
+                    sample *= envelope;
+                    
+                    data[i] = sample;
+                }
+
+                this.glitchBuffer = buffer;
+            }
+
+            playGlitchSound() {
+                if (this.audioContext && this.glitchBuffer) {
+                    const source = this.audioContext.createBufferSource();
+                    const gainNode = this.audioContext.createGain();
+                    
+                    source.buffer = this.glitchBuffer;
+                    gainNode.gain.value = 0.3;
+                    
+                    source.connect(gainNode);
+                    gainNode.connect(this.audioContext.destination);
+                    
+                    source.start();
+                }
+            }
+
+            async captureCurrentPage() {
+                try {
+                    const canvas = await html2canvas(document.getElementById('content'), {
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                        scale: 1,
+                        useCORS: true,
+                        allowTaint: true
+                    });
+
+                    const texture = new THREE.CanvasTexture(canvas);
+                    texture.minFilter = THREE.LinearFilter;
+                    texture.magFilter = THREE.LinearFilter;
+                    texture.format = THREE.RGBAFormat;
+                    
+                    return texture;
+                } catch (error) {
+                    console.warn('html2canvas failed, using fallback texture');
+                    return this.createFallbackTexture();
+                }
+            }
+
+            createFallbackTexture() {
+                const canvas = document.createElement('canvas');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                const ctx = canvas.getContext('2d');
+                
+                // Create gradient background
+                const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+                gradient.addColorStop(0, '#0a0a0a');
+                gradient.addColorStop(0.5, '#1a1a2e');
+                gradient.addColorStop(1, '#16213e');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Add some text
+                ctx.fillStyle = '#00ffff';
+                ctx.font = '48px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText('CYBER NEXUS', canvas.width / 2, canvas.height / 2);
+                
+                const texture = new THREE.CanvasTexture(canvas);
+                texture.minFilter = THREE.LinearFilter;
+                texture.magFilter = THREE.LinearFilter;
+                
+                return texture;
+            }
+
+            async startGlitch(targetScene) {
+                if (this.isAnimating) return;
+
+                this.isAnimating = true;
+                this.targetScene = targetScene;
+                this.startTime = Date.now();
+
+                // Capture current page
+                const texture = await this.captureCurrentPage();
+                this.material.uniforms.tDiffuse.value = texture;
+                
+                // Show canvas
+                const canvasContainer = document.getElementById('canvas-container');
+                canvasContainer.classList.add('active');
+                
+                // Hide content
+                document.getElementById('content').classList.add('hidden');
+                
+                // Play sound
+                this.playGlitchSound();
+                
+                // Start animation
+                this.animate();
+            }
+
+            animate() {
+                if (!this.isAnimating) return;
+
+                const elapsed = Date.now() - this.startTime;
+                const progress = Math.min(elapsed / this.duration, 1);
+                
+                // Update uniforms
+                this.material.uniforms.time.value = elapsed;
+                this.material.uniforms.intensity.value = this.getIntensityCurve(progress);
+                
+                // Render
+                this.renderer.render(this.scene, this.camera);
+                
+                if (progress < 1) {
+                    requestAnimationFrame(() => this.animate());
+                } else {
+                    this.endGlitch();
+                }
+            }
+
+            getIntensityCurve(t) {
+                // Custom intensity curve for dramatic effect
+                if (t < 0.1) return t * 10; // Quick ramp up
+                if (t < 0.3) return 1 + Math.sin(t * 30) * 0.5; // Oscillation
+                if (t < 0.7) return 1.5 - (t - 0.3) * 0.5; // Slow decrease
+                if (t < 0.9) return 1.3 + Math.sin(t * 50) * 0.3; // Final burst
+                return 1.3 * (1 - (t - 0.9) * 10); // Quick fade out
+            }
+
+            endGlitch() {
+                this.isAnimating = false;
+                
+                // Hide canvas
+                const canvasContainer = document.getElementById('canvas-container');
+                canvasContainer.classList.remove('active');
+                
+                // Switch scenes
+                this.switchToScene(this.targetScene);
+                
+                // Show content
+                document.getElementById('content').classList.remove('hidden');
+            }
+
+            switchToScene(sceneId) {
+                // Hide all scenes
+                const scenes = document.querySelectorAll('.scene');
+                scenes.forEach(scene => scene.classList.remove('active'));
+                
+                // Show target scene
+                const targetScene = document.getElementById(sceneId);
+                if (targetScene) {
+                    targetScene.classList.add('active');
+                }
+            }
+
+            onWindowResize() {
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                
+                this.renderer.setSize(width, height);
+                this.material.uniforms.resolution.value.set(width, height);
+            }
+        }
+
+        // Initialize the glitch transition system
+        let glitchTransition;
+
+        function init() {
+            glitchTransition = new GlitchTransition();
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                glitchTransition.onWindowResize();
+            });
+        }
+
+        function initiateGlitch(targetScene) {
+            if (glitchTransition) {
+                glitchTransition.startGlitch(targetScene);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
