@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import { motion } from "framer-motion";
+import { motion, number } from "framer-motion";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
@@ -11,9 +11,137 @@ import { title } from "process";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
-    { num :"01" , category :"frontend", title: "Portfolio", description: "A personal portfolio website to showcase my work and skills.", stack :[{name : "Html 5"},{name : "Css 3"},{name : "JavaScript"}], image: "/screenshot-wide.jpg", live:"", github: "https://github.com/yourusername/portfolio" },
-    { num :"02" , category :"frontend", title: "E-commerce Website", description: "A fully functional e-commerce website built with Next.js and Tailwind CSS.", stack :[{name : "Next.js"},{name : "Tailwind CSS"}], image: "/screenshot-wide.jpg", live:"", github: "https://github.com/yourusername/ecommerce" },
-    { num :"03" , category :"backend", title: "API Development", description: "RESTful API development using Node.js and Express.", stack: [{name : "Html 5"},{name : "Css 3"},{name : "Node.js"}], image: "/screenshot-wide.jpg", live:"", github: "https://github.com/yourusername/api" },
+    {
+        number: "00",
+        category: "fullstack",
+        title: "Varnotsava Website",
+        description: "A fullstack web application for managing college events, featuring user authentication, event management, and a responsive design.",
+        stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }, { name: "TypeScript" }],
+        image: "/work/varnothsava.png",
+        live: "https://varnothsava-2k25-six.vercel.app/",
+        github: "https://github.com/Ramachandra-2k96/vARNOTHSAVA-2K25",
+    },
+
+  {
+    num: "01",
+    category: "fullstack",
+    title: "College App",
+    description: "A Java-based Android application to manage student records, course enrollments, and academic data.",
+    stack: [{ name: "Java" }, { name: "Android" }],
+    image: "/work/CollegeApp.png",
+    live: "https://www.figma.com/community/file/1394214805869456145/college-app",
+    github: "https://github.com/Ramachandra-2096/SMVITM"
+  },
+  {
+    num: "02",
+    category: "agentic",
+    title: "Autonomous Browser Controller",
+    description: "A local LLM-driven browser agent to automate workflows and tasks.",
+    stack: [{ name: "Python" }, { name: "LangChain" }, { name: "Playwright" }],
+    image: "/work/BrowserAgent.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "03",
+    category: "fullstack",
+    title: "Voice to Visualization",
+    description: "A Python tool that takes voice queries and generates visualizations from relational databases.",
+    stack: [{ name: "Python" }, { name: "LangChain" }, { name: "SQL" }],
+    image: "/work/VoiceToVisualization.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "04",
+    category: "agentic",
+    title: "Agentic Chess Game",
+    description: "An AI agent that plays chess using a step-by-step planning workflow with no pretraining.",
+    stack: [{ name: "Python" }, { name: "LLM" }, { name: "Agent Workflow" }],
+    image: "/work/ChessAgent.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "05",
+    category: "fullstack",
+    title: "Job Scheduler Agent",
+    description: "An agent workflow to coordinate interviews for 1,000+ recruiters with calendar and email integration.",
+    stack: [{ name: "Python" }, { name: "LangGraph" }],
+    image: "/work/JobScheduler.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "06",
+    category: "cybersecurity",
+    title: "Server Hijacking Simulator",
+    description: "A lab environment to simulate and study unauthorized server access via misconfigured SSH.",
+    stack: [{ name: "Linux" }, { name: "SSH" }, { name: "Python" }],
+    image: "/work/ServerHijack.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "07",
+    category: "cybersecurity",
+    title: "Password Cracking with John the Ripper",
+    description: "Analyzed password strength and simulated cracking using dictionary and brute-force attacks.",
+    stack: [{ name: "John the Ripper" }, { name: "Hashcat" }],
+    image: "/work/PasswordCracking.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "08",
+    category: "rag",
+    title: "FAQ Retrieval System",
+    description: "A local LLM-based system using LangChain for document-based question answering.",
+    stack: [{ name: "LangChain" }, { name: "Python" }, { name: "FAISS" }],
+    image: "/work/FAQRetrieval.png",
+    live: "https://github.com/Ramachandra-2k96/Complete_automation",
+    github: "https://github.com/Ramachandra-2k96/Complete_automation"
+  },
+  {
+    num: "09",
+    category: "rag",
+    title: "Research Paper Q&A Tool",
+    description: "Query and summarize uploaded research papers using RAG pipelines.",
+    stack: [{ name: "LangChain" }, { name: "LLamaIndex" }, { name: "Pinecone" }],
+    image: "/work/ResearchQA.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "10",
+    category: "ml",
+    title: "Plant Disease Detection",
+    description: "Used CNNs to classify leaf diseases in plants from images with high accuracy.",
+    stack: [{ name: "Python" }, { name: "Pytorch" }, { name: "Django" }],
+    image: "/work/plant.png",
+    live: "",
+    github: ""
+  },
+  {
+    num: "11",
+    category: "ml",
+    title: "Phishing Website Detection",
+    description: "Classified websites as real or phishing using feature extraction and supervised learning.",
+    stack: [{ name: "Python" }, { name: "TensorFlow" }],
+    image: "/work/Phishing.png",
+    live: "",
+    github: ""
+  },
+    {
+        num: "12",
+        category: "Web Development",
+        title: "E-learning Platform",
+        description: "A Django-based platform for online courses with user authentication, course management, and quizzes.",
+        stack: [{ name: "Python" }, { name: "Django" }, { name: "Tailwind CSS" }],
+        image: "/work/e-learning.png",
+        live: "https://github.com/Ramachandra-2096/TCR_Project_e-learning_website",
+        github: "https://github.com/Ramachandra-2096/TCR_Project_e-learning_website"
+    }
 ];
 
 const Work = () => {
@@ -33,7 +161,7 @@ const Work = () => {
                     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
                         <div className="flex flex-col gap-[30px]">
                              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">{project.num}</div>
-                        <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">{project.category} Project</h2>
+                        <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">{project.title}</h2>
                         <p className="text-white/60">{project.description}</p>
                         <ul>
                             {project.stack.map((item, index) => (

@@ -6,25 +6,32 @@ import { title } from "process";
 import { motion } from "framer-motion";
 
 const services = [
-    {
-      num:"01",
-      title: "Web Development",
-      description: "Building responsive and dynamic web applications using modern technologies like React, Next.js, and Node.js.",
-      link: "/services/web-development",
-    },
+  {
+    num: "01",
+    title: "Web Development",
+    description: "Developing full-stack web applications using React, Next.js, Django, and Node.js.",
+    link: "/services/web-development",
+  },
   {
     num: "02",
     title: "Machine Learning",
-    description: "Creating intelligent systems that learn from data.",
+    description: "Building models for classification, prediction, and automation using Python, PyTorch, and LLM tools.",
     link: "/services/machine-learning",
   },
   {
     num: "03",
     title: "Mobile App Development",
-    description: "Developing cross-platform mobile applications.",
+    description: "Creating Android applications with Java and integrating backend services.",
     link: "/services/mobile-app-development",
   },
+  {
+    num: "04",
+    title: "Agent-Based Systems",
+    description: "Designing autonomous agents using LangChain, LangGraph, and local language models.",
+    link: "/services/agent-based-systems",
+  },
 ];
+
 const ServicesPage = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0 ">

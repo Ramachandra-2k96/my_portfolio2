@@ -2,92 +2,92 @@
 import { degrees } from "framer-motion";
 import { icons } from "lucide-react";
 import { title } from "process";
-import {FaHtml5, FaCss3, FaJs, FaReact, FaPython} from "react-icons/fa";
-import {SiTailwindcss, SiNextdotjs, SiTypescript, SiTensorflow, SiPytorch, SiFlask, SiFastapi} from "react-icons/si";
+import {FaHtml5, FaCss3, FaJs, FaReact, FaPython } from "react-icons/fa";
+import {SiTailwindcss, SiNextdotjs, SiTypescript, SiLangchain, SiOllama, SiPytorch,SiGooglecloud, SiFlask, SiFastapi} from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
 
-
 const about = {
-    title :"About Me",
-    description: "I am a Full Stack Developer and Machine Learning Engineer with a passion for building innovative applications. I specialize in creating AI-powered solutions using modern web technologies like React, Next.js, and Python. My expertise includes web development, machine learning, and data science, allowing me to deliver end-to-end solutions that solve real-world problems. I am committed to continuous learning and staying updated with the latest advancements in technology. My goal is to leverage my skills to create impactful applications that enhance user experiences and drive business success.",
-    info : [
-        { fieldName : "Name", fieldValue : "Ramachandra Udupa" },
-        { fieldName : "Email", fieldValue : "ramachandraudupa2004@gmail.com" },
-        { fieldName : "Phone", fieldValue : "(+91) 9353867435" },
-        { fieldName : "Experience", fieldValue : "2+ Years" },
-        { fieldName : "Location", fieldValue : "Udupi, India" },
-        { fieldName : "Freelance", fieldValue : "Available" },
-        { fieldName : "Languages", fieldValue : "English, Hindi, Kannada" },
+    title: "About Me",
+    description: "I'm a Full Stack Developer and Machine Learning Engineer. I work with tools like Django, Next.js, and Python to build web apps and integrate AI features. My work includes developing autonomous agents, browser automation, and data-driven systems. I focus on building reliable, maintainable software and learning new technologies to improve my work.",
+    info: [
+        { fieldName: "Name", fieldValue: "Ramachandra Udupa" },
+        { fieldName: "Email", fieldValue: "ramachandraudupa2004@gmail.com" },
+        { fieldName: "Phone", fieldValue: "(+91) 9353867435" },
+        { fieldName: "Experience", fieldValue: "2+ Years" },
+        { fieldName: "Location", fieldValue: "Udupi, India" },
+        { fieldName: "Freelance", fieldValue: "Available" },
+        { fieldName: "Languages", fieldValue: "English, Hindi, Kannada" }
     ]
 }
 
 const experiences = {
-    icon :"",
-    title : "Experiences",
-    description : "I have over 4 years of experience in full stack development and machine learning. I have worked on various projects that involve building web applications, developing machine learning models, and integrating AI capabilities into software solutions. My experience includes working with technologies such as React, Next.js, Python, TensorFlow, and PyTorch. I have a strong understanding of both front-end and back-end development.",
-    items : [
+    icon: "",
+    title: "Experiences",
+    description: "I've worked on software development and AI projects through internships and independent work. This includes building LLM-based tools, automating workflows, and developing web systems using Python and JavaScript.",
+    items: [
         {
-            company: "Tech Solutions Inc.",
-            position: "Full Stack Developer",
-            duration: "Jan 2022 - Present",
+            company: "Threat-Prism",
+            position: "Intern",
+            duration: "Aug 2022 - Nov-2022"
         },
         {
-            company: "Tech Solutions Inc.",
-            position: "Full Stack Developer",
-            duration: "Jan 2022 - Present",
+            company: "TCR Innovation",
+            position: "Intern",
+            duration: "Jan 2023 - Aug 2023"
         },
         {
-            company: "Tech Solutions Inc.",
-            position: "Full Stack Developer",
-            duration: "Jan 2022 - Present",
+            company: "SangamOne Connected Services Pvt. Ltd.",
+            position: "Software Intern",
+            duration: "Nov 2023 - Apr 2024"
         },
         {
-            company: "Tech Solutions Inc.",
-            position: "Full Stack Developer",
-            duration: "Jan 2022 - Present",
+            company: "IonIdea",
+            position: "AI Engineering Intern",
+            duration: "Feb 2025 - May 2025"
         }
     ]
 }
 
 const education = {
-    icon :"",
-    title : "Education",
-    description : "I have a strong educational background in computer science and engineering. I hold a Bachelor's degree in Computer Science from XYZ University, where I gained a solid foundation in software development, algorithms, and data structures. My education has equipped me with the skills necessary to tackle complex problems and develop innovative solutions.",
-    items : [
+    icon: "",
+    title: "Education",
+    description: "I studied Artificial Intelligence and Data Science, with a focus on software engineering and machine learning.",
+    items: [
         {
-            institution: "XYZ University",
-            degree: "Bachelor's in Computer Science",
-            duration: "2018 - 2022",
+            institution: "Viveka Pre-University College Kota",
+            degree: "Pre-University",
+            duration: "2019 - 2021"
         },
         {
-            institution: "XYZ University",
-            degree: "Bachelor's in Computer Science",
-            duration: "2018 - 2022",
-        },
+            institution: "Shri Madhwa Vadiraja Institute of Technology & Management",
+            degree: "B.E",
+            duration: "2021 - 2025"
+        }
     ]
 }
 
 const skills = {
-    title : "Skills",
-    description : "I possess a diverse skill set that includes both technical and soft skills. My technical skills include proficiency in programming languages such as Python, JavaScript, and TypeScript, as well as expertise in frameworks like React, Next.js, and Flask. I am also skilled in machine learning.",
-    skilllist : [
-        { name: "HTML", icon: <FaHtml5/> },
-        { name: "CSS", icon: <FaCss3/> },
+    title: "Skills",
+    description: "I work with both front-end and back-end tools, machine learning libraries, and cloud services.",
+    skilllist: [
         { name: "JavaScript", icon: <FaJs/> },
         { name: "React", icon: <FaReact/> },
         { name: "Python", icon: <FaPython/> },
         { name: "Tailwind CSS", icon: <SiTailwindcss/> },
         { name: "Next.js", icon: <SiNextdotjs/> },
         { name: "TypeScript", icon: <SiTypescript/> },
-        { name: "TensorFlow", icon: <SiTensorflow/> },
         { name: "PyTorch", icon: <SiPytorch/> },
-        { name: "Flask", icon: <SiFlask/> },
-        { name: "FastAPI", icon: <SiFastapi/> }
-    ]   
+        { name: "LangChain", icon: <SiLangchain/> },
+        { name: "LLamaIndex", icon: <SiOllama/> },
+        { name: "Django", icon: <SiFlask/> },
+        { name: "Azure", icon: <SiFastapi/> },
+        { name: "Google Cloud", icon: <SiGooglecloud/> }
+    ]
 }
+
 
 const Resume = () => {
     return (

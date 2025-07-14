@@ -14,7 +14,7 @@ export const themeColor = "#000000";
 
 export const metadata: Metadata = {
   title: "Ramachandra Udupa - Full Stack Developer & Machine Learning Engineer",
-  description: "Full Stack Developer and Machine Learning Engineer specializing in AI applications, React, Python, and data-driven web solutions. Building intelligent systems that solve real-world problems.",
+  description: "Full Stack Developer & Machine Learning Engineer building AI-powered web solutions with React, Python, and modern technologies.",
   metadataBase: new URL("https://ramachandra.tech"), 
   keywords: [
     "Full Stack Developer",
@@ -32,7 +32,11 @@ export const metadata: Metadata = {
     "API Development",
     "Web Development",
     "Artificial Intelligence",
-    "Software Engineer"
+    "Software Engineer",
+    "Portfolio",
+    "Ramachandra",
+    "Udupa",
+    "ramachandra-udupa",
   ],
   authors: [{ name: "Ramachandra Udupa" }],
   creator: "Ramachandra Udupa",

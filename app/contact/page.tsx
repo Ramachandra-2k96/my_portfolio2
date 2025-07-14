@@ -58,8 +58,8 @@ const Contact = () => {
                                 <div className="text-[28px]">{item.icon}</div>
                             </div>
                             <div className="flex-1">
-                                <p className="text-white/60">{item.label}</p>
-                                <h3 className="text-sm xl:text-xl">{item.value}</h3>
+                                <p className=" text-sm xl:text-xl text-white/60">{item.label}</p>
+                                <h3 className="text-xs xl:text-xl">{item.value}</h3>
                             </div>
                         </div>
                     ))}
