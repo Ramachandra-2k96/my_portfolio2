@@ -23,7 +23,7 @@ const Contact = () => {
 
         const form = e.currentTarget;
         const data = new FormData(form);
-        data.append("access_key", "YOUR_WEB3FORMS_KEY"); // ← Replace with your Web3Forms key
+        data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "");
         data.append("subject", `Portfolio contact: ${data.get("topic") || "General"}`);
         data.append("from_name", `${data.get("firstname")} ${data.get("lastname")}`);
 
