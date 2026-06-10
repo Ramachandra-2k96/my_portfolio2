@@ -14,9 +14,8 @@ export default function Home() {
           <span className="text-2xl">Software Developer & Machine Learning Engineer</span>
           <h1 className="h1 mb-6">Hello I'm <br /><span className="text-accent">Ramachandra Udupa</span></h1>
           <p className="max-w-[500px] mb-9 text-white/80">
-            I work across software development and machine learning, and have built a wide range of practical projects in both areas.
-            I'm especially interested in exploring the intersection of AI and embedded systems, including Edge AI applications.
-            I enjoy solving real-world problems by combining efficient code with intelligent models.
+            I build web applications, train ML models, and tinker with electronics. 
+            Specialised in AI and Data Science, with a growing interest in embedded systems and hardware.
           </p>
           <div className="flex flex-col xl:flex-row items-center gap-8">
             <a href="/Resume-Ramachandra_udupa.pdf" download>

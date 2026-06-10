@@ -13,30 +13,24 @@ export const viewport = {
 export const themeColor = "#000000";
 
 export const metadata: Metadata = {
-  title: "Ramachandra Udupa - Full Stack Developer & Machine Learning Engineer",
-  description: "Full Stack Developer & Machine Learning Engineer building AI-powered web solutions with React, Python, and modern technologies.",
+  title: "Ramachandra Udupa - Software Developer & ML Engineer",
+  description: "Portfolio of Ramachandra Udupa — Software Developer and Machine Learning Engineer specialised in AI, Data Science, and web development. Also interested in embedded systems and electronics.",
   metadataBase: new URL("https://ramachandra.tech"), 
   keywords: [
-    "Full Stack Developer",
+    "Software Developer",
     "Machine Learning Engineer",
-    "AI Developer",
+    "AI Engineer",
+    "Data Science",
     "Python",
     "React",
     "Next.js",
-    "TypeScript",
-    "TensorFlow",
     "PyTorch",
-    "Data Science",
-    "Neural Networks",
-    "Deep Learning",
-    "API Development",
-    "Web Development",
-    "Artificial Intelligence",
-    "Software Engineer",
+    "LangChain",
+    "Django",
+    "Embedded Systems",
+    "Electronics",
     "Portfolio",
-    "Ramachandra",
-    "Udupa",
-    "ramachandra-udupa",
+    "Ramachandra Udupa",
   ],
   authors: [{ name: "Ramachandra Udupa" }],
   creator: "Ramachandra Udupa",
@@ -46,22 +40,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://ramachandra.tech",
-    title: "Ramachandra Udupa - Full Stack Developer & Machine Learning Engineer",
-    description: "Full Stack Developer and Machine Learning Engineer building AI-powered applications with React, Python, and modern web technologies.",
+    title: "Ramachandra Udupa - Software Developer & ML Engineer",
+    description: "Portfolio of Ramachandra Udupa — Software Developer and Machine Learning Engineer.",
     siteName: "Ramachandra Udupa Portfolio",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Ramachandra Udupa - Full Stack Developer & ML Engineer Portfolio"
+        alt: "Ramachandra Udupa Portfolio"
       }
     ]
   },
   other: {
     "linkedin:card": "summary_large_image",
-    "linkedin:title": "Ramachandra Udupa - Full Stack Developer & Machine Learning Engineer",
-    "linkedin:description": "Full Stack Developer and Machine Learning Engineer building AI-powered applications with React, Python, and modern web technologies.",
+    "linkedin:title": "Ramachandra Udupa - Software Developer & ML Engineer",
+    "linkedin:description": "Portfolio of Ramachandra Udupa — Software Developer and Machine Learning Engineer.",
     "linkedin:image": "/opengraph-image.png",
     "linkedin:creator": "ramachandra-udupa"
   },

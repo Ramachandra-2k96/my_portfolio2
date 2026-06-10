@@ -30,7 +30,7 @@ const Nav = () => {
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className='mt-32 mb-40  text-center text-2xl'>
                     <Link href="/" onClick={handleLinkClick}>
-                    <h1 className='text-4xl font-semibold'>logo <span className='text-accent'>.</span></h1></Link>
+                    <h1 className='text-4xl font-semibold'>Ramachandra <span className='text-accent'>.</span></h1></Link>
                 </div>
                  <nav className='flex flex-col justify-center items-center gap-8'>
                     {links.map((link, index) => (

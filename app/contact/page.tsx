@@ -5,10 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectGroup, SelectLabel} from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt }  from "react-icons/fa";
-import { use } from "react";
 
 const info = [
-    { icon: <FaPhoneAlt />, label: "Phone", value: "+919483924280" },
+    { icon: <FaPhoneAlt />, label: "Phone", value: "(+91) 9353867435" },
     { icon: <FaEnvelope />, label: "Email", value: "ramachandraudupa2004@gmail.com" },
     { icon: <FaMapMarkerAlt />, label: "Location", value: "Udupi, India" }
 ];

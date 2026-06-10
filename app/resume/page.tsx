@@ -1,9 +1,6 @@
 "use client";
-import { degrees } from "framer-motion";
-import { icons } from "lucide-react";
-import { title } from "process";
-import {FaHtml5, FaCss3, FaJs, FaReact, FaPython } from "react-icons/fa";
-import {SiTailwindcss, SiNextdotjs, SiTypescript, SiLangchain, SiOllama, SiPytorch,SiGooglecloud, SiFlask, SiFastapi} from "react-icons/si";
+import {FaJs, FaReact, FaPython, FaMicrosoft } from "react-icons/fa";
+import {SiTailwindcss, SiNextdotjs, SiTypescript, SiLangchain, SiOllama, SiPytorch, SiGooglecloud, SiDjango} from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -11,7 +8,7 @@ import {motion} from "framer-motion";
 
 const about = {
     title: "About Me",
-    description: "I'm a Full Stack Developer and Machine Learning Engineer. I work with tools like Django, Next.js, and Python to build web apps and integrate AI features. My work includes developing autonomous agents, browser automation, and data-driven systems. I focus on building reliable, maintainable software and learning new technologies to improve my work.",
+    description: "I'm a Software Developer and Machine Learning Engineer specialised in AI and Data Science. I build web applications, develop ML models, and work on autonomous agent systems. I also enjoy electronics and embedded systems as a hobby.",
     info: [
         { fieldName: "Name", fieldValue: "Ramachandra Udupa" },
         { fieldName: "Email", fieldValue: "ramachandraudupa2004@gmail.com" },
@@ -71,7 +68,7 @@ const education = {
 
 const skills = {
     title: "Skills",
-    description: "I work with both front-end and back-end tools, machine learning libraries, and cloud services.",
+    description: "I work with front-end and back-end tools, machine learning libraries, and cloud platforms.",
     skilllist: [
         { name: "JavaScript", icon: <FaJs/> },
         { name: "React", icon: <FaReact/> },
@@ -82,8 +79,8 @@ const skills = {
         { name: "PyTorch", icon: <SiPytorch/> },
         { name: "LangChain", icon: <SiLangchain/> },
         { name: "LLamaIndex", icon: <SiOllama/> },
-        { name: "Django", icon: <SiFlask/> },
-        { name: "Azure", icon: <SiFastapi/> },
+        { name: "Django", icon: <SiDjango/> },
+        { name: "Azure", icon: <FaMicrosoft/> },
         { name: "Google Cloud", icon: <SiGooglecloud/> }
     ]
 }
@@ -118,7 +115,7 @@ const Resume = () => {
                                                 <h3 className="text-xl max-w-[260px] min-h-[60px] text-centre lg:text-left">{item.position}</h3>
                                                 <div className="flex items-center gap-3">
                                                     <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                                                    <p className="texthttp://localhost:3000/resume-white/60">{item.company}</p>
+                                                    <p className="text-white/60">{item.company}</p>
                                                 </div>
                                             </li>
                                         );

@@ -1,13 +1,12 @@
 "use client";
 import React, {useState} from "react";
-import { motion, number } from "framer-motion";
+import { motion } from "framer-motion";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
-import { title } from "process";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
