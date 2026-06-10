@@ -13,12 +13,12 @@ const process = [
 ];
 
 const capabilities = [
-    { title: "Frontend Development", desc: "Responsive, accessible UIs with React and Next.js. Server components, SSR/SSG, and smooth animations with Framer Motion.", icon: "⚡" },
-    { title: "Backend & REST APIs", desc: "Scalable APIs with Django or FastAPI. JWT auth, role-based access, file uploads, and PostgreSQL/SQLite integration.", icon: "🔧" },
-    { title: "Full-Stack Delivery", desc: "End-to-end ownership — from database schema to deployed product. Vercel, Railway, or VPS deployment.", icon: "🚀" },
-    { title: "UI/UX Implementation", desc: "Pixel-perfect interfaces with Tailwind CSS. Dark modes, glassmorphism, micro-animations, and responsive layouts.", icon: "🎨" },
-    { title: "Performance & SEO", desc: "Core Web Vitals optimisation, image optimisation, code splitting, and structured metadata for search engines.", icon: "📊" },
-    { title: "Auth & Security", desc: "Secure authentication with JWT, session management, CSRF protection, and environment-based secrets handling.", icon: "🔐" },
+    { title: "Frontend Development", desc: "Responsive, accessible UIs with React and Next.js. Server components, SSR/SSG, and smooth animations with Framer Motion." },
+    { title: "Backend & REST APIs", desc: "Scalable APIs with Django or FastAPI. JWT auth, role-based access, file uploads, and PostgreSQL/SQLite integration." },
+    { title: "Full-Stack Delivery", desc: "End-to-end ownership — from database schema to deployed product. Vercel, Railway, or VPS deployment." },
+    { title: "UI/UX Implementation", desc: "Pixel-perfect interfaces with Tailwind CSS. Dark modes, glassmorphism, micro-animations, and responsive layouts." },
+    { title: "Performance & SEO", desc: "Core Web Vitals optimisation, image optimisation, code splitting, and structured metadata for search engines." },
+    { title: "Auth & Security", desc: "Secure authentication with JWT, session management, CSRF protection, and environment-based secrets handling." },
 ];
 
 const projects = [
@@ -39,7 +39,7 @@ const tech = [
 
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.4, ease: "easeOut" } }),
+    visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.4, ease: "easeOut" as const } }),
 };
 
 export default function WebDevelopment() {
@@ -50,12 +50,10 @@ export default function WebDevelopment() {
             className="min-h-[80vh] py-12 xl:py-16"
         >
             <div className="container mx-auto">
-                {/* Back */}
                 <Link href="/services" className="inline-flex items-center gap-2 text-accent mb-12 hover:gap-3 transition-all duration-300 group">
                     <BsArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Services
                 </Link>
 
-                {/* Hero */}
                 <div className="mb-16">
                     <span className="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">Service — 01</span>
                     <h1 className="text-5xl xl:text-7xl font-extrabold mb-6 leading-none">Web<br /><span className="text-accent">Development</span></h1>
@@ -65,7 +63,6 @@ export default function WebDevelopment() {
                     </p>
                 </div>
 
-                {/* Capabilities */}
                 <div className="mb-20">
                     <h2 className="text-3xl font-bold mb-8">What I deliver</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -78,7 +75,6 @@ export default function WebDevelopment() {
                                 animate="visible"
                                 className="bg-[#27272c] rounded-xl p-7 flex flex-col gap-3 border border-white/5 hover:border-accent/40 transition-all duration-300 group"
                             >
-                                <span className="text-3xl">{item.icon}</span>
                                 <h3 className="text-white font-semibold text-lg group-hover:text-accent transition-colors">{item.title}</h3>
                                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
                             </motion.div>
@@ -86,7 +82,6 @@ export default function WebDevelopment() {
                     </div>
                 </div>
 
-                {/* Process */}
                 <div className="mb-20">
                     <h2 className="text-3xl font-bold mb-8">My process</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -108,7 +103,6 @@ export default function WebDevelopment() {
                     </div>
                 </div>
 
-                {/* Featured Projects */}
                 <div className="mb-20">
                     <h2 className="text-3xl font-bold mb-8">Featured projects</h2>
                     <div className="flex flex-col gap-4">
@@ -141,7 +135,6 @@ export default function WebDevelopment() {
                     </Link>
                 </div>
 
-                {/* Tech Stack */}
                 <div>
                     <h2 className="text-3xl font-bold mb-8">Tech stack</h2>
                     <div className="flex flex-wrap gap-4">
