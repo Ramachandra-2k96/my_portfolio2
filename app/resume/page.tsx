@@ -48,7 +48,7 @@ const experiences = {
         {
             company: "Tata Consultancy Services (TCS)",
             position: "Software Engineer",
-            duration: "July 2025 - Present"
+            duration: "Dec 2025 - Present"
         }
     ]
 }
@@ -112,7 +112,7 @@ const Resume = () => {
                                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
                                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experiences.description}</p>
                             </div>
-                            <ScrollArea className="h-[400px]">
+                            <ScrollArea className="h-[520px]">
                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                     {experiences.items.map((item, index) => {
                                         return (
