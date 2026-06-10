@@ -1,10 +1,10 @@
 "use client";
-import {FaJs, FaReact, FaPython, FaMicrosoft } from "react-icons/fa";
-import {SiTailwindcss, SiNextdotjs, SiTypescript, SiLangchain, SiOllama, SiPytorch, SiGooglecloud, SiDjango} from "react-icons/si";
+import { FaJs, FaReact, FaPython, FaMicrosoft } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs, SiTypescript, SiLangchain, SiOllama, SiPytorch, SiGooglecloud, SiDjango, SiArduino } from "react-icons/si";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const about = {
     title: "About Me",
@@ -44,6 +44,11 @@ const experiences = {
             company: "IonIdea",
             position: "AI Engineering Intern",
             duration: "Feb 2025 - May 2025"
+        },
+        {
+            company: "Tata Consultancy Services (TCS)",
+            position: "Software Engineer",
+            duration: "July 2025 - Present"
         }
     ]
 }
@@ -70,30 +75,31 @@ const skills = {
     title: "Skills",
     description: "I work with front-end and back-end tools, machine learning libraries, and cloud platforms.",
     skilllist: [
-        { name: "JavaScript", icon: <FaJs/> },
-        { name: "React", icon: <FaReact/> },
-        { name: "Python", icon: <FaPython/> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss/> },
-        { name: "Next.js", icon: <SiNextdotjs/> },
-        { name: "TypeScript", icon: <SiTypescript/> },
-        { name: "PyTorch", icon: <SiPytorch/> },
-        { name: "LangChain", icon: <SiLangchain/> },
-        { name: "LLamaIndex", icon: <SiOllama/> },
-        { name: "Django", icon: <SiDjango/> },
-        { name: "Azure", icon: <FaMicrosoft/> },
-        { name: "Google Cloud", icon: <SiGooglecloud/> }
+        { name: "JavaScript", icon: <FaJs /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "Python", icon: <FaPython /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "PyTorch", icon: <SiPytorch /> },
+        { name: "LangChain", icon: <SiLangchain /> },
+        { name: "LLamaIndex", icon: <SiOllama /> },
+        { name: "Django", icon: <SiDjango /> },
+        { name: "Azure", icon: <FaMicrosoft /> },
+        { name: "Google Cloud", icon: <SiGooglecloud /> },
+        { name: "Electronics", icon: <SiArduino /> }
     ]
 }
 
 
 const Resume = () => {
     return (
-       <motion.div 
-       initial={{ opacity: 0 }}
-       animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
-       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
+            className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
             <div className="container mx-auto">
-                <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px]">
+                <Tabs defaultValue="experience" className="flex flex-col xl:flex-row gap-[60px] h-full">
                     <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
                         <TabsTrigger value="experience">Experience</TabsTrigger>
                         <TabsTrigger value="education">Education</TabsTrigger>
@@ -106,9 +112,9 @@ const Resume = () => {
                                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
                                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{experiences.description}</p>
                             </div>
-                            <ScrollArea className="h-[400px]"> 
+                            <ScrollArea className="h-[400px]">
                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                                    {experiences.items.map( (item, index) => {
+                                    {experiences.items.map((item, index) => {
                                         return (
                                             <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-centre items-centre lg:items-start gap-1">
                                                 <span className="text-accent">{item.duration}</span>
@@ -153,21 +159,21 @@ const Resume = () => {
                                     <h3 className="text-4xl font-bold">{skills.title}</h3>
                                     <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
                                 </div>
-                                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]"> 
+                                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]">
                                     {skills.skilllist.map((skill, index) => {
                                         return (
-                                           <li key={index}>
-                                            <TooltipProvider delayDuration={100}>
-                                                <Tooltip>
-                                                    <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                                                        <div className="text-6xl group-hover:text-accent transition-all duration-300">{skill.icon}</div>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent>
-                                                       <div className="capitalize"> {skill.name}</div>
-                                                    </TooltipContent>
-                                                </Tooltip>
-                                            </TooltipProvider>
-                                           </li>
+                                            <li key={index}>
+                                                <TooltipProvider delayDuration={100}>
+                                                    <Tooltip>
+                                                        <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                                            <div className="text-6xl group-hover:text-accent transition-all duration-300">{skill.icon}</div>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <div className="capitalize"> {skill.name}</div>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                </TooltipProvider>
+                                            </li>
                                         );
                                     })}
                                 </ul>
@@ -191,7 +197,7 @@ const Resume = () => {
                     </div>
                 </Tabs>
             </div>
-       </motion.div>
+        </motion.div>
     );
 }
 export default Resume;

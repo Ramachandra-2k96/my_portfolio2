@@ -11,7 +11,7 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
     {
-        number: "00",
+        num: "00",
         category: "fullstack",
         title: "Varnotsava Website",
         description: "A fullstack web application for managing college events, featuring user authentication, event management, and a responsive design.",
@@ -20,127 +20,156 @@ const projects = [
         live: "https://varnothsava-2k25-six.vercel.app/",
         github: "https://github.com/Ramachandra-2k96/vARNOTHSAVA-2K25",
     },
-
-  {
-    num: "01",
-    category: "fullstack",
-    title: "College App",
-    description: "A Java-based Android application to manage student records, course enrollments, and academic data.",
-    stack: [{ name: "Java" }, { name: "Android" }],
-    image: "/work/CollegeApp.png",
-    live: "https://www.figma.com/community/file/1394214805869456145/college-app",
-    github: "https://github.com/Ramachandra-2096/SMVITM"
-  },
-  {
-    num: "02",
-    category: "agentic",
-    title: "Autonomous Browser Controller",
-    description: "A local LLM-driven browser agent to automate workflows and tasks.",
-    stack: [{ name: "Python" }, { name: "LangChain" }, { name: "Playwright" }],
-    image: "/work/BrowserAgent.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "03",
-    category: "fullstack",
-    title: "Voice to Visualization",
-    description: "A Python tool that takes voice queries and generates visualizations from relational databases.",
-    stack: [{ name: "Python" }, { name: "LangChain" }, { name: "SQL" }],
-    image: "/work/VoiceToVisualization.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "04",
-    category: "agentic",
-    title: "Agentic Chess Game",
-    description: "An AI agent that plays chess using a step-by-step planning workflow with no pretraining.",
-    stack: [{ name: "Python" }, { name: "LLM" }, { name: "Agent Workflow" }],
-    image: "/work/ChessAgent.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "05",
-    category: "fullstack",
-    title: "Job Scheduler Agent",
-    description: "An agent workflow to coordinate interviews for 1,000+ recruiters with calendar and email integration.",
-    stack: [{ name: "Python" }, { name: "LangGraph" }],
-    image: "/work/JobScheduler.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "06",
-    category: "cybersecurity",
-    title: "Server Hijacking Simulator",
-    description: "A lab environment to simulate and study unauthorized server access via misconfigured SSH.",
-    stack: [{ name: "Linux" }, { name: "SSH" }, { name: "Python" }],
-    image: "/work/ServerHijack.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "07",
-    category: "cybersecurity",
-    title: "Password Cracking with John the Ripper",
-    description: "Analyzed password strength and simulated cracking using dictionary and brute-force attacks.",
-    stack: [{ name: "John the Ripper" }, { name: "Hashcat" }],
-    image: "/work/PasswordCracking.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "08",
-    category: "rag",
-    title: "FAQ Retrieval System",
-    description: "A local LLM-based system using LangChain for document-based question answering.",
-    stack: [{ name: "LangChain" }, { name: "Python" }, { name: "FAISS" }],
-    image: "/work/FAQRetrieval.png",
-    live: "https://github.com/Ramachandra-2k96/Complete_automation",
-    github: "https://github.com/Ramachandra-2k96/Complete_automation"
-  },
-  {
-    num: "09",
-    category: "rag",
-    title: "Research Paper Q&A Tool",
-    description: "Query and summarize uploaded research papers using RAG pipelines.",
-    stack: [{ name: "LangChain" }, { name: "LLamaIndex" }, { name: "Pinecone" }],
-    image: "/work/ResearchQA.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "10",
-    category: "ml",
-    title: "Plant Disease Detection",
-    description: "Used CNNs to classify leaf diseases in plants from images with high accuracy.",
-    stack: [{ name: "Python" }, { name: "Pytorch" }, { name: "Django" }],
-    image: "/work/plant.png",
-    live: "",
-    github: ""
-  },
-  {
-    num: "11",
-    category: "ml",
-    title: "Phishing Website Detection",
-    description: "Classified websites as real or phishing using feature extraction and supervised learning.",
-    stack: [{ name: "Python" }, { name: "TensorFlow" }],
-    image: "/work/Phishing.png",
-    live: "",
-    github: ""
-  },
+    {
+        num: "01",
+        category: "fullstack",
+        title: "College App",
+        description: "A Java-based Android application to manage student records, course enrollments, and academic data.",
+        stack: [{ name: "Java" }, { name: "Android" }],
+        image: "/work/CollegeApp.png",
+        live: "https://www.figma.com/community/file/1394214805869456145/college-app",
+        github: "https://github.com/Ramachandra-2096/SMVITM"
+    },
+    {
+        num: "02",
+        category: "agentic",
+        title: "Autonomous Browser Controller",
+        description: "A local LLM-driven browser agent to automate workflows and tasks.",
+        stack: [{ name: "Python" }, { name: "LangChain" }, { name: "Playwright" }],
+        image: "/work/BrowserAgent.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "03",
+        category: "fullstack",
+        title: "Voice to Visualization",
+        description: "A Python tool that takes voice queries and generates visualizations from relational databases.",
+        stack: [{ name: "Python" }, { name: "LangChain" }, { name: "SQL" }],
+        image: "/work/VoiceToVisualization.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "04",
+        category: "agentic",
+        title: "Agentic Chess Game",
+        description: "An AI agent that plays chess using a step-by-step planning workflow with no pretraining.",
+        stack: [{ name: "Python" }, { name: "LLM" }, { name: "Agent Workflow" }],
+        image: "/work/ChessAgent.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "05",
+        category: "fullstack",
+        title: "Job Scheduler Agent",
+        description: "An agent workflow to coordinate interviews for 1,000+ recruiters with calendar and email integration.",
+        stack: [{ name: "Python" }, { name: "LangGraph" }],
+        image: "/work/JobScheduler.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "06",
+        category: "cybersecurity",
+        title: "Server Hijacking Simulator",
+        description: "A lab environment to simulate and study unauthorized server access via misconfigured SSH.",
+        stack: [{ name: "Linux" }, { name: "SSH" }, { name: "Python" }],
+        image: "/work/ServerHijack.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "07",
+        category: "cybersecurity",
+        title: "Password Cracking with John the Ripper",
+        description: "Analyzed password strength and simulated cracking using dictionary and brute-force attacks.",
+        stack: [{ name: "John the Ripper" }, { name: "Hashcat" }],
+        image: "/work/PasswordCracking.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "08",
+        category: "rag",
+        title: "FAQ Retrieval System",
+        description: "A local LLM-based system using LangChain for document-based question answering.",
+        stack: [{ name: "LangChain" }, { name: "Python" }, { name: "FAISS" }],
+        image: "/work/FAQRetrieval.png",
+        live: "https://github.com/Ramachandra-2k96/Complete_automation",
+        github: "https://github.com/Ramachandra-2k96/Complete_automation"
+    },
+    {
+        num: "09",
+        category: "rag",
+        title: "Research Paper Q&A Tool",
+        description: "Query and summarize uploaded research papers using RAG pipelines.",
+        stack: [{ name: "LangChain" }, { name: "LLamaIndex" }, { name: "Pinecone" }],
+        image: "/work/ResearchQA.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "10",
+        category: "ml",
+        title: "Plant Disease Detection",
+        description: "Used CNNs to classify leaf diseases in plants from images with high accuracy.",
+        stack: [{ name: "Python" }, { name: "PyTorch" }, { name: "Django" }],
+        image: "/work/plant.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "11",
+        category: "ml",
+        title: "Phishing Website Detection",
+        description: "Classified websites as real or phishing using feature extraction and supervised learning.",
+        stack: [{ name: "Python" }, { name: "TensorFlow" }],
+        image: "/work/Phishing.png",
+        live: "",
+        github: ""
+    },
     {
         num: "12",
-        category: "Web Development",
+        category: "fullstack",
         title: "E-learning Platform",
         description: "A Django-based platform for online courses with user authentication, course management, and quizzes.",
         stack: [{ name: "Python" }, { name: "Django" }, { name: "Tailwind CSS" }],
         image: "/work/e-learning.png",
         live: "https://github.com/Ramachandra-2096/TCR_Project_e-learning_website",
         github: "https://github.com/Ramachandra-2096/TCR_Project_e-learning_website"
-    }
+    },
+    {
+        num: "13",
+        category: "electronics",
+        title: "Custom Quadcopter Drone",
+        description: "Designed and built a quadcopter drone from scratch — selected and soldered the ESCs, flight controller, motors, and frame. Programmed flight stability using PID tuning on Betaflight.",
+        stack: [{ name: "Electronics" }, { name: "PID Control" }, { name: "Betaflight" }],
+        image: "/work/Drone.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "14",
+        category: "electronics + ml",
+        title: "Autonomous Drone Control & Aerial Photography",
+        description: "Built on top of the custom drone hardware, integrated a Raspberry Pi and camera module. Trained a Q-learning agent to navigate autonomously and trigger captures at optimal viewpoints.",
+        stack: [{ name: "Python" }, { name: "Q-Learning" }, { name: "Raspberry Pi" }, { name: "OpenCV" }],
+        image: "/work/AutonomousDrone.png",
+        live: "",
+        github: ""
+    },
+    {
+        num: "15",
+        category: "agentic",
+        title: "Legacy System Resurrector",
+        description: "A graph-based multi-agent framework that parses legacy codebases, builds a semantic dependency graph, and orchestrates specialised agents to refactor, document, and migrate modules to modern architecture.",
+        stack: [{ name: "Python" }, { name: "LangGraph" }, { name: "Neo4j" }, { name: "LLM" }],
+        image: "/work/LegacyResurrector.png",
+        live: "",
+        github: ""
+    },
 ];
 
 const Work = () => {
@@ -208,7 +237,7 @@ const Work = () => {
                                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                                     <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                                     <div className="relative w-full h-full">
-                                        <Image src={item.image} alt={item.title} fill className="object-cover" />
+                                        <Image src={item.image} alt={item.title} fill sizes="(max-width: 1280px) 100vw, 50vw" className="object-cover" />
                                     </div>
                                     </div>
                                 </SwiperSlide>
@@ -223,3 +252,4 @@ const Work = () => {
     );
 }
 export default Work;
+

@@ -22,6 +22,7 @@ const Photo = () => {
                         quality={100}
                         alt="Ramachandra Udupa"
                         fill
+                        sizes="(max-width: 768px) 298px, 498px"
                         className="object-contain"
                     />
             </motion.div>
